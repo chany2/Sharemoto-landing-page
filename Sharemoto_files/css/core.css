@@ -1,0 +1,274 @@
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 200;
+  src: local('Source Sans Pro ExtraLight'), local('SourceSansPro-ExtraLight'), url(http://themes.googleusercontent.com/static/fonts/sourcesanspro/v6/toadOcfmlt9b38dHJxOBGC-IiwWNzQT_LXAtr-Ee9Pw.woff) format('woff');
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Source Sans Pro Light'), local('SourceSansPro-Light'), url(http://themes.googleusercontent.com/static/fonts/sourcesanspro/v6/toadOcfmlt9b38dHJxOBGMVNtom4QlEDNJaqqqzqdSs.woff) format('woff');
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Source Sans Pro'), local('SourceSansPro-Regular'), url(http://themes.googleusercontent.com/static/fonts/sourcesanspro/v6/ODelI1aHBYDBqgeIAH2zlNHq-FFgoDNV3GTKpHwuvtI.woff) format('woff');
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Source Sans Pro Semibold'), local('SourceSansPro-Semibold'), url(http://themes.googleusercontent.com/static/fonts/sourcesanspro/v6/toadOcfmlt9b38dHJxOBGCmgpmuQqK2I-L2S9cF65Ek.woff) format('woff');
+}
+@font-face {
+  font-family: 'Source Sans Pro';
+  font-style: italic;
+  font-weight: 300;
+  src: local('Source Sans Pro Light Italic'), local('SourceSansPro-LightIt'), url(http://themes.googleusercontent.com/static/fonts/sourcesanspro/v6/fpTVHK8qsXbIeTHTrnQH6H7XMO6S-yJpg1torQFmnv33rGVtsTkPsbDajuO5ueQw.woff) format('woff');
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.clear{
+  clear:both;
+}
+.margin{
+  margin:10%;
+}
+input:focus, textarea:focus {
+    outline: none;
+}
+.logo img{
+  margin:0 auto;
+  display:block;
+}
+.navbar-default {
+  background: #fff!important;
+}
+.navbar-default .navbar-brand, .navbar-default .navbar-nav>li>a {
+  color:#000!important;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-nav>li>a:hover {
+  color:#47a3da!important;
+}
+.middle-block{
+  margin:0 auto;
+  padding:40px 30px 0;
+  background:#f8f8f8;
+}
+.lower-block{
+  margin:5% 8%;
+}
+.background h1{
+  font-size: 70px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  line-height: 170px;
+  margin-top:0px;
+}
+.top-block .background{
+  width: 100%;
+  height: 400px;
+  background-position: center;
+  background-size: cover;
+  background-image:url('../img/desk.jpg');
+}
+.top-block .filter{
+  height: 400px;
+  background: rgba(0, 0, 0, 0.5);
+}
+.description{
+  margin: 0 15%;
+}
+.description p, .columns h5{
+  font-size: 30px;
+  text-align: center;
+  font-weight: 300;
+  color: #111;
+}
+.columns{
+  width:90%;
+  margin: 0 auto;
+}
+.columns .column{
+  padding:3%;
+}
+.project {
+  width: 100%;
+  height: 200px;
+  border-top: 1px solid #47a3da;
+}
+
+#tagline{
+  padding-top: 40px;
+}
+h1 .animated-caret {
+  display: inline-block;
+  width: 5px;
+  height: 80px;
+  margin-left: -2px;
+  margin-right: -3px;
+  margin-bottom: -12px;
+  background: #47a3da;
+}
+#input-box, #signup-email{
+  margin:0 auto;
+  display:block;
+}
+#signup-email{
+  border: 8px solid #2674A2;
+  border-radius: 20px;
+  padding: 10px;
+  width:25%;
+}
+
+
+
+
+.item-icons-container{
+  width: 700px;
+  margin: 0 auto;
+  position: relative;
+  margin-top: 40px;
+  height: 330px;
+  z-index: 100;
+  background-position: bottom;
+}
+.item-animation {
+  position: relative;
+  overflow: visible;
+  height: auto;
+}
+.item-icon{
+  position:absolute;
+}
+.item-icon-email{
+  width:56px;
+  height:56px;
+  background-image: url('../img/email.png');
+}
+.item-icon-convos{
+  width:56px;
+  height:56px;
+  background-image: url('../img/conversation.png');
+}
+.item-icon-calendar{
+  width:56px;
+  height:56px;
+  background-image: url('../img/calendar.png');
+}
+
+#item-icon-email-1 {
+position:absolute;
+left:197px;
+top:39px;
+}
+
+#item-icon-email-2 {
+position:absolute;
+left:448px;
+top:52px;
+}
+
+#item-icon-email-3 {
+position:absolute;
+left:590px;
+top:126px;
+}
+
+#item-icon-email-4 {
+position:absolute;
+left:458px;
+top:136px;
+}
+
+#item-icon-email-5 {
+position:absolute;
+left:135px;
+top:181px;
+}
+
+#item-icon-email-6 {
+position:absolute;
+left:304px;
+top:246px;
+}
+
+#item-icon-convos-1 {
+position:absolute;
+left:82px;
+top:100px;
+}
+
+#item-icon-convos-2 {
+position:absolute;
+left:241px;
+top:89px;
+}
+
+#item-icon-convos-3 {
+position:absolute;
+left:631px;
+top:90px;
+}
+
+#item-icon-convos-4 {
+position:absolute;
+left:399px;
+top:159px;
+}
+
+#item-icon-convos-5 {
+position:absolute;
+left:250px;
+top:192px;
+}
+
+#item-icon-convos-6 {
+position:absolute;
+left:590px;
+top:260px;
+}
+
+#item-icon-calendar-1 {
+position:absolute;
+left:359px;
+top:21px;
+}
+
+#item-icon-calendar-2 {
+position:absolute;
+left:577px;
+top:42px;
+}
+
+#item-icon-calendar-3 {
+position:absolute;
+left:340px;
+top:155px;
+}
+
+#item-icon-calendar-4 {
+position:absolute;
+left:0;
+top:162px;
+}
+
+#item-icon-calendar-5 {
+position:absolute;
+left:192px;
+top:185px;
+}
+
+#item-icon-calendar-6 {
+position:absolute;
+left:484px;
+top:263px;
+}
