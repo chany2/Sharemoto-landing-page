@@ -175,9 +175,10 @@ h1 .animated-caret {
   height: auto;
 }
 .item-animation-projects-container{
-  height: 1400px;
-  margin-top: -240px;
-  padding-top: 240px;
+  overflow: hidden;
+  height: 1600px;
+  margin-top: -440px;
+  padding-top: 440px;
 }
 .item-icon{
   position:absolute;
