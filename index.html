@@ -9,7 +9,7 @@
 		<meta name="msapplication-tap-highlight" content="no">
 		<title>Sharemoto.io</title>
 		<link href="Sharemoto_files/css/core.css" rel="stylesheet" type="text/css">
-		
+		<link rel="shortcut icon" href="Sharemoto_files/img/favicon.ico">
 		<!-- <link href="Sharemoto_files/css/main.css" rel="stylesheet" type="text/css"> -->
 		<link href="Sharemoto_files/css/bootstrap.min.css" rel="stylesheet">
 
@@ -44,9 +44,18 @@
 		  			</div>
 		  			<div class="col-md-12 center">
 						<div id="input-box">
-							<div id="input-message">SIGN UP FOR THE BETA</div>
-							<input type="email" name="EMAIL" class="required email" id="signup-email" placeholder="Email">
-							<button class="btn" id="submit-btn">→</button>
+							<form class="myform" action="http://sharemoto.us3.list-manage2.com/subscribe/post" method="GET">
+								<input type="hidden" name="u" value="afaf61d74164c6b9c55dee222">
+								<input type="hidden" name="id" value="6fda419979">
+								<div id="input-message">SIGN UP FOR THE BETA</div>
+								<div id="success-div" style="overflow: hidden; padding-right: .5em;height:55px">
+									<div class="success-email" style="display:none">Success! Confirm your Email.</div>
+									<div id="submission-div">
+										<input type="email" class="required email signup-email" name="MERGE0" id="MERGE0" placeholder="Email">
+										<input class="btn" id="submit-btn" type="submit" value="→">
+									</div>
+								</div>
+							</form>
 						</div>
 					</div>
 	  			</div>
@@ -118,16 +127,11 @@
 						  		<p>Discussions and emails can be followed by invite even when users are not CC’ed.</p>
 						  	</div>
 						  	<hr class="featurette-divider">
-						  	<style>
-						  	.lower-block img{display: none}
-						  	</style>
 
 						  	<div class="lower-block">
 						  		<ul>
-						  			<li><div class="col-xs-6"><h2>Personal:</h2><p>We often copy out important emails or flag it or boomerang it for later review. To track discussions and conversations under the same topic while having different subject line, requires grouping emails after its all sent. Hashtagging emails on the spot, allow for cleaner experience on consolidating critical information more efficiently.</p></div><div class="diagram col-xs-6"><img src="Sharemoto_files/img/mail.png"></div><div class="clear"></div></li>
-						  			<li><div class="diagram col-xs-6"><img src="Sharemoto_files/img/mail.png"></div><div class="col-xs-6"><h2>Work:</h2><p>Within Outlook and even in other email clients, our teammate sends us numerous emails back and forth from milestone emails (important) to small responses and small changes (not important). The existing email client Search feature requires the user to really remember the context of the email he or she is looking for – delays grabbing that email as soon as possible when the information is needed.</p></div><div class="clear"></div></li>
-									<li><div class="col-xs-6"><h2>Team Structure:</h2><p>Much of the content and discussions remain today still on emails back and forth between individuals and between teams where CC’ed gets overwhelming. Currently, most of the usage in Sharepoint or Dropbox are in storing files (Excel, Powerpoint, Docs). Without context, they are difficult to parse. Replicating a Sharepoint for Emails, allows discussions to be followed even when users are not part of it.</p></div><div class="diagram col-xs-6"><img src="Sharemoto_files/img/mail.png"></div><div class="clear"></div></li>
-
+						  			<li><div class="col-xs-6"><h2>Team Structure:</h2><p>Much of the content and discussions remain today still on emails back and forth between individuals and between teams where CC’ed gets overwhelming. Currently, most of the usage in Sharepoint or Dropbox are in storing files (Excel, Powerpoint, Docs). Without context, they are difficult to parse. Replicating a Sharepoint for Emails, allows discussions to be followed even when users are not part of it.</p></div><div class="diagram col-xs-6"><div class="video-container"><iframe width="400" height="225" src="https://www.youtube.com/embed/69mqGL08_hc?rel=0" frameborder="0" allowfullscreen></iframe></div></div><div class="clear"></div></li>
+						  			<li><div class="col-xs-6"><h2>Personal:</h2><p>We often copy out important emails or flag it or boomerang it for later review. To track discussions and conversations under the same topic while having different subject line, requires grouping emails after its all sent. Hashtagging emails on the spot, allow for cleaner experience on consolidating critical information more efficiently.</p></div><div class="col-xs-6"><h2>Work:</h2><p>Within Outlook and even in other email clients, our teammate sends us numerous emails back and forth from milestone emails (important) to small responses and small changes (not important). The existing email client Search feature requires the user to really remember the context of the email he or she is looking for – delays grabbing that email as soon as possible when the information is needed.</p></div><div class="clear"></div></li>
 			
 								</ul>
 						  	</div>	
@@ -153,7 +157,48 @@
 		<script src="Sharemoto_files/js/bootstrap.min.js"></script>
 		<script src="Sharemoto_files/js/core.js"></script>
 		
-
+		<script>
+		function validateEmail(email){
+	        var reg = /^[a-zA-Z0-9\-_]+(\.[a-zA-Z0-9\-_]+)*@[a-z0-9]+(\-[a-z0-9]+)*(\.[a-z0-9]+(\-[a-z0-9]+)*)*\.[a-z]{2,4}$/;
+	        if (reg.test(email)){
+	            return true;
+	        }else{
+	            return false;
+	        }
+  		}
+		$('.myform').submit(function(e) {
+		  var email = $("#MERGE0").val();
+		  if(validateEmail(email)){
+		  	var $this = $(this);
+		  	$.ajax({
+		      type: "GET", // GET & url for json slightly different
+		      url: "http://sharemoto.us3.list-manage2.com/subscribe/post-json?c=?",
+		      data: $this.serialize(),
+		      dataType    : 'json',
+		      contentType: "application/json; charset=utf-8",
+		      error       : function(err) { alert("Could not connect to the registration server."); },
+		      success     : function(data) {
+		          if (data.result != "success") {
+		              // Something went wrong, parse data.msg string and display message
+		          } else {
+		              console.log('success');
+		              $('#submission-div').fadeOut(); 
+		              $('#input-message').fadeOut();
+		              $('.success-email').fadeIn();
+		              // It worked, so hide form and display thank-you message.
+		          }
+		      }
+		  	});
+		  	return false;
+		  }else{
+		  	alert('Email Error');
+		  }
+		});
+		$('#up').click(function(){
+		    $("html, body").animate({ scrollTop: 0 }, 600);
+		    return false;
+		});
+		</script>
 		
 	
 </body></html>
