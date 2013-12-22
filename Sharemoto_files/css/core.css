@@ -121,7 +121,7 @@ h1 .animated-caret {
 #submit-btn, #up-btn{
   background: #2674A2;
   padding: 17px;
-  margin-top: 1px;
+  margin-top: -2px;
   margin-left: -4px;
   border-radius: 0;
   color: #fff;
